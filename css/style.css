@@ -320,3 +320,132 @@ footer {
 
     transition: 0.3s;
 }
+
+/* =========================
+   口语交际
+========================= */
+
+.oral-section {
+
+    padding: 70px 40px;
+
+    background: #faf7f2;
+}
+
+.section-title {
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 50px;
+
+    color: #333;
+
+    font-weight: bold;
+}
+
+.section-title span {
+
+    color: #5b8db8;
+}
+
+.oral-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 35px;
+
+    flex-wrap: wrap;
+}
+
+.oral-card {
+
+    position: relative;
+
+    width: 420px;
+
+    overflow: hidden;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+
+    transition: all 0.35s ease;
+
+    border: 3px solid #d8c7b5;
+
+    background: white;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.oral-card img {
+
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+.oral-text {
+
+    position: absolute;
+
+    left: 30px;
+
+    top: 30px;
+
+    background: rgba(255,255,255,0.92);
+
+    color: #222;
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    writing-mode: vertical-rl;
+
+    padding: 18px 10px;
+
+    border-radius: 6px;
+
+    letter-spacing: 3px;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.oral-card:hover {
+
+    transform: translateY(-8px) scale(1.02);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+}
+
+@media screen and (max-width: 768px) {
+
+    .oral-card {
+
+        width: 95%;
+    }
+
+    .oral-card img {
+
+        height: 200px;
+    }
+
+    .oral-text {
+
+        font-size: 30px;
+    }
+
+    .section-title {
+
+        font-size: 30px;
+    }
+}
