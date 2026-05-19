@@ -2,26 +2,101 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>保护视力</title>
 
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
+<body class="topic-detail-page">
 
-<section class="page-content">
+<div class="scroll-wrapper">
 
-    <h1>保护视力</h1>
+    <!-- 左卷轴 -->
+    <div class="scroll-left"></div>
 
-    <p>
-        后续将在这里实现：
-        看图说话、
-        朗读、
-        AI对话、
-        词语学习等功能。
-    </p>
+    <!-- 主内容 -->
+    <div class="scroll-content">
 
-</section>
+        <div class="topic-detail-container">
+
+            <!-- 左侧 -->
+            <div class="topic-image-section">
+
+                <img
+                    src="../images/topics/1.jpg"
+                    alt="保护视力"
+                    class="topic-main-image"
+                >
+
+                <h2>保护视力</h2>
+
+            </div>
+
+            <!-- 右侧 -->
+            <div class="topic-writing-section">
+
+                <!-- 顶部 -->
+                <div class="writing-header">
+
+                    <p>
+                        看左侧这幅图片，用自己的话描述图中的内容，必须说满30秒。
+                    </p>
+
+                    <div class="timer-box">
+
+                        ⏰ <span id="timer">01:00</span>
+
+                    </div>
+
+                </div>
+
+                <!-- 作文区域 -->
+                <div class="writing-lines">
+
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 右卷轴 -->
+    <div class="scroll-right"></div>
+
+</div>
+
+<script>
+
+let total = 60;
+
+function updateTimer() {
+
+    const minute = String(Math.floor(total / 60)).padStart(2, '0');
+
+    const second = String(total % 60).padStart(2, '0');
+
+    document.getElementById('timer').innerText =
+        minute + ':' + second;
+
+    if(total > 0) {
+        total--;
+    }
+}
+
+setInterval(updateTimer, 1000);
+
+</script>
 
 </body>
 </html>
