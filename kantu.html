@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>看图说话</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">中文学习平台</div>
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="youth.html">青少年学习者</a>
+    </nav>
+</header>
+
+<section class="page-content">
+
+    <h1 class="oral-title">看图说话</h1>
+
+    <!-- 第1页 -->
+    <div class="topic-page active" id="page1">
+
+        <div class="topic-grid">
+
+            <a href="topics/topic1.html" class="topic-card">
+                <img src="images/topics/1.jpg">
+                <p>保护视力</p>
+            </a>
+
+            <a href="topics/topic2.html" class="topic-card">
+                <img src="images/topics/2.jpg">
+                <p>放风筝</p>
+            </a>
+
+            <a href="topics/topic3.html" class="topic-card">
+                <img src="images/topics/3.jpg">
+                <p>地球累了</p>
+            </a>
+
+            <a href="topics/topic4.html" class="topic-card">
+                <img src="images/topics/4.jpg">
+                <p>我爱四季</p>
+            </a>
+
+            <a href="topics/topic5.html" class="topic-card">
+                <img src="images/topics/5.jpg">
+                <p>下雨啦</p>
+            </a>
+
+            <a href="topics/topic6.html" class="topic-card">
+                <img src="images/topics/6.jpg">
+                <p>乌鸦喝水</p>
+            </a>
+
+            <a href="topics/topic7.html" class="topic-card">
+                <img src="images/topics/7.jpg">
+                <p>我们去植树</p>
+            </a>
+
+            <a href="topics/topic8.html" class="topic-card">
+                <img src="images/topics/8.jpg">
+                <p>四季</p>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- 第2页 -->
+    <div class="topic-page" id="page2">
+
+        <div class="topic-grid">
+
+            <a href="topics/topic9.html" class="topic-card">
+                <img src="images/topics/9.jpg">
+                <p>我给奶奶捶背</p>
+            </a>
+
+            <a href="topics/topic10.html" class="topic-card">
+                <img src="images/topics/10.jpg">
+                <p>注意安全</p>
+            </a>
+
+            <a href="topics/topic11.html" class="topic-card">
+                <img src="images/topics/11.jpg">
+                <p>小马过河</p>
+            </a>
+
+            <a href="topics/topic12.html" class="topic-card">
+                <img src="images/topics/12.jpg">
+                <p>小白兔种白菜</p>
+            </a>
+
+            <a href="topics/topic13.html" class="topic-card">
+                <img src="images/topics/13.jpg">
+                <p>让座</p>
+            </a>
+
+            <a href="topics/topic14.html" class="topic-card">
+                <img src="images/topics/14.jpg">
+                <p>蘑菇伞</p>
+            </a>
+
+            <a href="topics/topic15.html" class="topic-card">
+                <img src="images/topics/15.jpg">
+                <p>妈妈不在家</p>
+            </a>
+
+            <a href="topics/topic16.html" class="topic-card">
+                <img src="images/topics/16.jpg">
+                <p>浇花</p>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- 分页按钮 -->
+    <div class="pagination">
+
+        <button onclick="showPage(1)">1</button>
+        <button onclick="showPage(2)">2</button>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 中文学习平台
+</footer>
+
+<script>
+
+function showPage(page) {
+
+    document.querySelectorAll('.topic-page').forEach(p => {
+        p.classList.remove('active');
+    });
+
+    document.getElementById('page' + page).classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
