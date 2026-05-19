@@ -6,6 +6,7 @@
 
     <title>保护视力 - 看图说话</title>
 
+    <!-- 使用网站统一CSS -->
     <link rel="stylesheet" href="css/style.css">
 
     <style>
@@ -15,99 +16,138 @@
         }
 
         /* 页面主体 */
-        .topic-container{
+        .topic-page{
             width: 92%;
-            margin: 40px auto;
+            margin: 50px auto;
         }
 
         /* 卷轴区域 */
-        .scroll-wrapper{
+        .topic-scroll{
+
             position: relative;
-            background: #f8f3ea;
-            border: 2px solid #d7b7aa;
+
+            background: #f9f6ef;
+
+            border: 2px solid #d8b8aa;
+
             padding: 28px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+
+            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
         }
 
-        /* 两侧卷轴 */
-        .scroll-wrapper::before,
-        .scroll-wrapper::after{
+        /* 左右卷轴 */
+        .topic-scroll::before,
+        .topic-scroll::after{
+
             content: "";
+
             position: absolute;
-            top: -18px;
-            width: 22px;
-            height: 100%;
-            background: linear-gradient(to right,#222,#555,#111);
-            border-radius: 6px;
+
+            top: -20px;
+
+            width: 24px;
+
+            height: calc(100% + 40px);
+
+            background: linear-gradient(to right,#111,#555,#111);
+
+            border-radius: 10px;
         }
 
-        .scroll-wrapper::before{
-            left: -28px;
+        .topic-scroll::before{
+            left: -32px;
         }
 
-        .scroll-wrapper::after{
-            right: -28px;
+        .topic-scroll::after{
+            right: -32px;
         }
 
-        .topic-layout{
+        /* 内容布局 */
+        .topic-content{
+
             display: flex;
+
             gap: 40px;
+
             align-items: flex-start;
         }
 
-        /* 左侧图片区 */
+        /* 左侧 */
         .topic-left{
             width: 42%;
         }
 
         .topic-left img{
+
             width: 100%;
-            border: 4px solid #eee;
+
+            border: 4px solid #f0f0f0;
+
             display: block;
+
+            border-radius: 4px;
         }
 
-        .topic-title{
+        .topic-name{
+
             margin-top: 18px;
-            font-size: 32px;
-            color: #444;
+
+            font-size: 38px;
+
             font-weight: bold;
+
+            color: #333;
         }
 
-        /* 右侧作文区域 */
+        /* 右侧 */
         .topic-right{
             flex: 1;
         }
 
         .topic-tip{
+
             display: flex;
+
             justify-content: space-between;
+
             align-items: center;
 
             font-size: 20px;
+
             color: #333;
 
             margin-bottom: 25px;
+
+            line-height: 1.8;
         }
 
-        .timer{
+        .topic-timer{
+
             font-size: 22px;
+
             color: #666;
+
             font-weight: bold;
+
+            white-space: nowrap;
         }
 
-        .writing-lines{
+        /* 横线 */
+        .writing-area{
             margin-top: 10px;
         }
 
-        .line{
-            border-bottom: 1px solid #d8a99d;
-            height: 46px;
+        .writing-line{
+
+            height: 52px;
+
+            border-bottom: 1px solid #d7a69b;
         }
 
-        /* 手机适配 */
+        /* 手机端 */
         @media screen and (max-width: 900px){
 
-            .topic-layout{
+            .topic-content{
                 flex-direction: column;
             }
 
@@ -116,14 +156,16 @@
             }
 
             .topic-tip{
+
                 flex-direction: column;
+
                 align-items: flex-start;
+
                 gap: 10px;
-                line-height: 1.8;
             }
 
-            .topic-title{
-                font-size: 24px;
+            .topic-name{
+                font-size: 28px;
             }
         }
 
@@ -135,34 +177,44 @@
 <!-- 顶部导航 -->
 <header>
 
-    <div class="logo">中文学习平台</div>
+    <div class="logo">
+        中文学习平台
+    </div>
 
     <nav>
+
         <a href="index.html">首页</a>
+
         <a href="youth.html">青少年学习者</a>
+
+        <a href="culture.html">中华文化</a>
+
+        <a href="news.html">华文资讯</a>
+
     </nav>
 
 </header>
 
 <!-- 页面主体 -->
-<div class="topic-container">
+<div class="topic-page">
 
-    <div class="scroll-wrapper">
+    <div class="topic-scroll">
 
-        <div class="topic-layout">
+        <div class="topic-content">
 
             <!-- 左侧图片 -->
             <div class="topic-left">
 
-                <img src="images/topics/1.jpg" alt="保护视力">
+                <!-- 注意这里的图片路径 -->
+                <img src="images/topics/topic1.jpg" alt="保护视力">
 
-                <div class="topic-title">
+                <div class="topic-name">
                     保护视力
                 </div>
 
             </div>
 
-            <!-- 右侧作文 -->
+            <!-- 右侧 -->
             <div class="topic-right">
 
                 <div class="topic-tip">
@@ -171,22 +223,22 @@
                         看左侧这幅图片，用自己的话描述图中的内容，必须说满30秒。
                     </div>
 
-                    <div class="timer">
+                    <div class="topic-timer">
                         ⏰ 01:00
                     </div>
 
                 </div>
 
-                <div class="writing-lines">
+                <div class="writing-area">
 
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
-                    <div class="line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
 
                 </div>
 
