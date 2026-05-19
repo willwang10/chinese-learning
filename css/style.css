@@ -881,3 +881,190 @@ footer {
         font-size: 16px;
     }
 }
+
+/* ====================================
+   topic detail
+==================================== */
+
+.topic-detail-page {
+
+    background: #ece9e4;
+
+    min-height: 100vh;
+
+    padding: 20px;
+}
+
+/* 卷轴 */
+
+.scroll-wrapper {
+
+    display: flex;
+
+    align-items: stretch;
+
+    min-height: 90vh;
+}
+
+.scroll-left,
+.scroll-right {
+
+    width: 28px;
+
+    background: linear-gradient(
+        to right,
+        #111,
+        #ddd,
+        #fff,
+        #ddd,
+        #111
+    );
+
+    border-radius: 8px;
+}
+
+.scroll-content {
+
+    flex: 1;
+
+    background:
+        #f8f3ec;
+
+    border: 3px solid #d9b7b0;
+
+    padding: 25px;
+
+    position: relative;
+}
+
+/* 主布局 */
+
+.topic-detail-container {
+
+    display: flex;
+
+    gap: 40px;
+}
+
+/* 左侧 */
+
+.topic-image-section {
+
+    width: 42%;
+}
+
+.topic-main-image {
+
+    width: 100%;
+
+    border: 8px solid #f5f1eb;
+
+    box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.topic-image-section h2 {
+
+    margin-top: 20px;
+
+    font-size: 36px;
+
+    color: #333;
+
+    font-weight: normal;
+}
+
+/* 右侧 */
+
+.topic-writing-section {
+
+    flex: 1;
+}
+
+/* 顶部 */
+
+.writing-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 40px;
+
+    gap: 20px;
+}
+
+.writing-header p {
+
+    font-size: 34px;
+
+    color: #222;
+
+    line-height: 1.8;
+}
+
+.timer-box {
+
+    font-size: 42px;
+
+    color: #4b5d73;
+
+    white-space: nowrap;
+}
+
+/* 横线 */
+
+.writing-lines {
+
+    margin-top: 10px;
+}
+
+.line {
+
+    border-bottom: 2px solid #d9b7b0;
+
+    height: 75px;
+}
+
+/* 手机适配 */
+
+@media screen and (max-width: 768px) {
+
+    .topic-detail-container {
+
+        flex-direction: column;
+    }
+
+    .topic-image-section {
+
+        width: 100%;
+    }
+
+    .writing-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .writing-header p {
+
+        font-size: 22px;
+    }
+
+    .timer-box {
+
+        font-size: 30px;
+    }
+
+    .line {
+
+        height: 50px;
+    }
+
+    .topic-image-section h2 {
+
+        font-size: 28px;
+    }
+}
