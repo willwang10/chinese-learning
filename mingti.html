@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>命题说话 - 中文学习平台</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+body{
+    margin:0;
+    background:#f5f2eb;
+    font-family:"Microsoft YaHei",sans-serif;
+}
+
+/* 页面主体 */
+.talk-container{
+    width:1200px;
+    margin:40px auto 60px;
+}
+
+/* 标题 */
+.page-title{
+    text-align:center;
+    font-size:52px;
+    margin-bottom:40px;
+    font-weight:bold;
+    color:#3f7cb3;
+}
+
+.page-title span{
+    color:#222;
+}
+
+/* 卡片区域 */
+.topic-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:28px;
+}
+
+/* 卡片 */
+.topic-card{
+    background:#f8efe7;
+    border-radius:6px;
+    padding:26px;
+    min-height:220px;
+    box-sizing:border-box;
+
+    box-shadow:
+        0 2px 10px rgba(0,0,0,0.08);
+
+    transition:all .25s ease;
+
+    cursor:pointer;
+
+    border:1px solid #eadfd5;
+}
+
+.topic-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.12);
+}
+
+/* 标题 */
+.topic-card h3{
+    margin:0;
+    font-size:32px;
+    color:#333;
+    margin-bottom:22px;
+}
+
+/* 分割线 */
+.topic-card .line{
+    width:100%;
+    height:1px;
+    background:#e3d5ca;
+    margin-bottom:22px;
+}
+
+/* 描述 */
+.topic-card p{
+    margin:0;
+    color:#666;
+    line-height:2;
+    font-size:20px;
+}
+
+/* 响应式 */
+@media(max-width:1100px){
+
+    .talk-container{
+        width:95%;
+    }
+
+    .topic-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:700px){
+
+    .topic-grid{
+        grid-template-columns:1fr;
+    }
+
+    .page-title{
+        font-size:38px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- 顶部导航 -->
+<header class="site-header">
+
+    <div class="logo">
+        中文学习平台
+    </div>
+
+    <nav class="nav-menu">
+        <a href="../index.html">首页</a>
+        <a href="../youth.html">青少年学习者</a>
+    </nav>
+
+</header>
+
+<!-- 页面主体 -->
+<div class="talk-container">
+
+    <div class="page-title">
+        命题<span>说话</span>
+    </div>
+
+    <!-- 第一页 -->
+    <div class="topic-page active-page" id="page1">
+
+        <div class="topic-grid">
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic1.html'">
+                <h3>业余时间你喜欢做些什么</h3>
+                <div class="line"></div>
+                <p>
+                    业余时间你喜欢做些什么？
+                    是读书、踢球、还是弹琴、画画等等，
+                    请谈谈你的业余爱好。
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic2.html'">
+                <h3>保护小动物</h3>
+                <div class="line"></div>
+                <p>
+                    说说哪些小动物对人类有益，
+                    请具体描述一下，
+                    我们该怎样保护它们呢？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic3.html'">
+                <h3>我最喜欢的一种食物</h3>
+                <div class="line"></div>
+                <p>
+                    同学们，你们爱吃什么美食？
+                    它看起来什么样？
+                    吃起来什么味道？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic4.html'">
+                <h3>我最喜欢的一门课</h3>
+                <div class="line"></div>
+                <p>
+                    在小学的学习过程中，
+                    你最喜欢什么课程？
+                    为什么喜欢这门课？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic5.html'">
+                <h3>我的本领</h3>
+                <div class="line"></div>
+                <p>
+                    你身上一定有很多值得夸奖的方面，
+                    比如画画、唱歌、跳舞等。
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic6.html'">
+                <h3>千姿百态的云</h3>
+                <div class="line"></div>
+                <p>
+                    你观察过天上的云吗？
+                    它们像什么？
+                    你有什么有趣的想象？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic7.html'">
+                <h3>我最喜欢的季节</h3>
+                <div class="line"></div>
+                <p>
+                    春夏秋冬，
+                    你最喜欢哪个季节？
+                    为什么？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic8.html'">
+                <h3>成长的烦恼</h3>
+                <div class="line"></div>
+                <p>
+                    成长过程中，
+                    我们总会遇到一些烦恼，
+                    你会怎样面对？
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 第二页 -->
+    <div class="topic-page" id="page2">
+
+        <div class="topic-grid">
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic9.html'">
+                <h3>我的好朋友</h3>
+                <div class="line"></div>
+                <p>
+                    请介绍一下你的好朋友，
+                    他有哪些优点？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic10.html'">
+                <h3>我最喜欢的运动</h3>
+                <div class="line"></div>
+                <p>
+                    你喜欢什么运动？
+                    它给你带来了哪些快乐？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic11.html'">
+                <h3>难忘的一件事</h3>
+                <div class="line"></div>
+                <p>
+                    在你的生活中，
+                    有没有一件特别难忘的事情？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic12.html'">
+                <h3>我的家乡</h3>
+                <div class="line"></div>
+                <p>
+                    请介绍一下你的家乡，
+                    那里有哪些特色？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic13.html'">
+                <h3>我的梦想</h3>
+                <div class="line"></div>
+                <p>
+                    长大后你想做什么？
+                    为什么？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic14.html'">
+                <h3>一次快乐的旅行</h3>
+                <div class="line"></div>
+                <p>
+                    请说说你的一次旅行经历，
+                    看到了什么？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic15.html'">
+                <h3>我喜欢的小动物</h3>
+                <div class="line"></div>
+                <p>
+                    你喜欢什么小动物？
+                    它有什么特点？
+                </p>
+            </div>
+
+            <div class="topic-card" onclick="location.href='topics/mingti_topic16.html'">
+                <h3>我的学校</h3>
+                <div class="line"></div>
+                <p>
+                    请介绍一下你的学校，
+                    你最喜欢学校的什么地方？
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- 分页 -->
+    <div class="pagination">
+
+        <button class="page-btn active"
+                onclick="showPage(1,this)">
+            1
+        </button>
+
+        <button class="page-btn"
+                onclick="showPage(2,this)">
+            2
+        </button>
+
+    </div>
+
+</div>
+
+<!-- footer -->
+<footer class="site-footer">
+    © 2026 中文学习平台
+</footer>
+
+<script>
+
+function showPage(page,btn){
+
+    document.querySelectorAll('.topic-page')
+        .forEach(p=>{
+            p.classList.remove('active-page');
+        });
+
+    document.getElementById('page'+page)
+        .classList.add('active-page');
+
+    document.querySelectorAll('.page-btn')
+        .forEach(b=>{
+            b.classList.remove('active');
+        });
+
+    btn.classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
