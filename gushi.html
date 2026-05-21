@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>故事复述</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">中文学习平台</div>
+
+    <nav>
+        <a href="index.html">首页</a>
+        <a href="youth.html">青少年学习者</a>
+    </nav>
+</header>
+
+<section class="page-content">
+
+    <h1 class="oral-title">故事复述</h1>
+
+    <!-- 第1页 -->
+    <div class="topic-page active" id="page1">
+
+        <div class="topic-grid">
+
+            <a href="topics/gushi_topic1.html" class="topic-card">
+                <img src="images/topics/gushi_1.jpg">
+                <p>破釜沉舟</p>
+            </a>
+
+            <a href="topics/gushi_topic2.html" class="topic-card">
+                <img src="images/topics/gushi_2.jpg">
+                <p>寒蝉学步</p>
+            </a>
+
+            <a href="topics/gushi_topic3.html" class="topic-card">
+                <img src="images/topics/gushi_3.jpg">
+                <p>乌鸦喝水</p>
+            </a>
+
+            <a href="topics/gushi_topic4.html" class="topic-card">
+                <img src="images/topics/gushi_4.jpg">
+                <p>爱迪生孵蛋</p>
+            </a>
+
+            <a href="topics/gushi_topic5.html" class="topic-card">
+                <img src="images/topics/gushi_5.jpg">
+                <p>望梅止渴</p>
+            </a>
+
+            <a href="topics/gushi_topic6.html" class="topic-card">
+                <img src="images/topics/gushi_6.jpg">
+                <p>塞翁失马</p>
+            </a>
+
+            <a href="topics/gushi_topic7.html" class="topic-card">
+                <img src="images/topics/gushi_7.jpg">
+                <p>滥竽充数</p>
+            </a>
+
+            <a href="topics/gushi_topic8.html" class="topic-card">
+                <img src="images/topics/gushi_8.jpg">
+                <p>对牛弹琴</p>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- 第2页 -->
+    <div class="topic-page" id="page2">
+
+        <div class="topic-grid">
+
+            <a href="topics/gushi_topic9.html" class="topic-card">
+                <img src="images/topics/gushi_9.jpg">
+                <p>揠苗助长</p>
+            </a>
+
+        </div>
+    </div>
+
+    <!-- 分页按钮 -->
+    <div class="pagination">
+
+        <button onclick="showPage(1)">1</button>
+        <button onclick="showPage(2)">2</button>
+
+    </div>
+
+</section>
+
+<footer>
+    © 2026 中文学习平台
+</footer>
+
+<script>
+
+function showPage(page) {
+
+    document.querySelectorAll('.topic-page').forEach(p => {
+        p.classList.remove('active');
+    });
+
+    document.getElementById('page' + page).classList.add('active');
+}
+
+</script>
+
+</body>
+</html>
