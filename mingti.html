@@ -1,163 +1,237 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>命题说话 - 中文学习平台</title>
+    <title>命题说话 - 中文学习平台</title>
 
-<link rel="stylesheet" href="css/style.css">
+    <!-- 公共CSS -->
+    <link rel="stylesheet" href="css/style.css">
 
-<style>
+    <style>
 
-body{
-    margin:0;
-    background:#f5f2eb;
-    font-family:"Microsoft YaHei",sans-serif;
-}
+        body{
+            margin:0;
+            background:#f5f2eb;
+            font-family:"Microsoft YaHei",sans-serif;
+            color:#333;
+        }
 
-/* 页面主体 */
-.talk-container{
-    width:1200px;
-    margin:40px auto 60px;
-}
+        /* =========================
+           Header
+        ========================= */
+        .site-header{
+            background:#6f9bc3;
+            padding:22px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 2px 10px rgba(0,0,0,0.1);
+        }
 
-/* 标题 */
-.page-title{
-    text-align:center;
-    font-size:52px;
-    margin-bottom:40px;
-    font-weight:bold;
-    color:#3f7cb3;
-}
+        .site-logo{
+            color:#fff;
+            font-size:28px;
+            font-weight:bold;
+        }
 
-.page-title span{
-    color:#222;
-}
+        .site-nav a{
+            color:#fff;
+            text-decoration:none;
+            margin-left:34px;
+            font-size:18px;
+        }
 
-/* 卡片区域 */
-.topic-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:28px;
-}
+        .site-nav a:hover{
+            opacity:0.85;
+        }
 
-/* 卡片 */
-.topic-card{
-    background:#f8efe7;
-    border-radius:6px;
-    padding:26px;
-    min-height:220px;
-    box-sizing:border-box;
+        /* =========================
+           Main
+        ========================= */
+        .mingti-container{
+            max-width:1300px;
+            margin:50px auto 80px;
+            padding:0 20px;
+        }
 
-    box-shadow:
-        0 2px 10px rgba(0,0,0,0.08);
+        .page-title{
+            text-align:center;
+            font-size:56px;
+            margin-bottom:40px;
+            font-weight:bold;
+            color:#222;
+        }
 
-    transition:all .25s ease;
+        .page-title span{
+            color:#5b8fc1;
+        }
 
-    cursor:pointer;
+        /* =========================
+           Topic Pages
+        ========================= */
+        .topic-page{
+            display:none;
+            grid-template-columns:repeat(4,1fr);
+            gap:24px;
+            background:#fff;
+            padding:28px;
+            border-radius:10px;
+            box-shadow:0 4px 14px rgba(0,0,0,0.15);
+        }
 
-    border:1px solid #eadfd5;
-}
+        .topic-page.active{
+            display:grid;
+        }
 
-.topic-card:hover{
-    transform:translateY(-6px);
+        /* =========================
+           Cards
+        ========================= */
+        .topic-card{
+            background:#f8efe7;
+            border:1px solid #e8d8c8;
+            border-radius:6px;
+            padding:22px 18px;
+            min-height:230px;
+            transition:all 0.25s;
+            cursor:pointer;
+            box-shadow:0 2px 6px rgba(0,0,0,0.08);
+        }
 
-    box-shadow:
-        0 10px 20px rgba(0,0,0,0.12);
-}
+        .topic-card:hover{
+            transform:translateY(-4px);
+            box-shadow:0 8px 18px rgba(0,0,0,0.15);
+        }
 
-/* 标题 */
-.topic-card h3{
-    margin:0;
-    font-size:32px;
-    color:#333;
-    margin-bottom:22px;
-}
+        .topic-card h3{
+            margin-top:0;
+            font-size:20px;
+            color:#222;
+            padding-bottom:14px;
+            border-bottom:1px solid #e3cfc0;
+            margin-bottom:18px;
+        }
 
-/* 分割线 */
-.topic-card .line{
-    width:100%;
-    height:1px;
-    background:#e3d5ca;
-    margin-bottom:22px;
-}
+        .topic-card p{
+            font-size:16px;
+            line-height:2;
+            color:#666;
+        }
 
-/* 描述 */
-.topic-card p{
-    margin:0;
-    color:#666;
-    line-height:2;
-    font-size:20px;
-}
+        /* =========================
+           Pagination
+        ========================= */
+        .pagination{
+            text-align:center;
+            margin-top:28px;
+        }
 
-/* 响应式 */
-@media(max-width:1100px){
+        .page-btn{
+            width:40px;
+            height:40px;
+            border:none;
+            border-radius:6px;
+            margin:0 8px;
+            background:#6f9bc3;
+            color:#fff;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.2s;
+        }
 
-    .talk-container{
-        width:95%;
-    }
+        .page-btn:hover{
+            background:#5b87af;
+        }
 
-    .topic-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
+        .page-btn.active{
+            background:#3f6f9c;
+        }
 
-@media(max-width:700px){
+        /* =========================
+           Footer
+        ========================= */
+        .site-footer{
+            background:#6f9bc3;
+            color:#fff;
+            text-align:center;
+            padding:28px 0;
+            margin-top:80px;
+            font-size:18px;
+        }
 
-    .topic-grid{
-        grid-template-columns:1fr;
-    }
+        /* =========================
+           Responsive
+        ========================= */
+        @media(max-width:1100px){
 
-    .page-title{
-        font-size:38px;
-    }
-}
+            .topic-page{
+                grid-template-columns:repeat(2,1fr);
+            }
+        }
 
-</style>
+        @media(max-width:700px){
+
+            .topic-page{
+                grid-template-columns:1fr;
+            }
+
+            .page-title{
+                font-size:40px;
+            }
+
+            .site-header{
+                flex-direction:column;
+                gap:18px;
+            }
+
+            .site-nav a{
+                margin:0 12px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-<!-- 顶部导航 -->
-<header class="site-header">
+    <!-- Header -->
+    <header class="site-header">
 
-    <div class="logo">
-        中文学习平台
-    </div>
+        <div class="site-logo">
+            中文学习平台
+        </div>
 
-    <nav class="nav-menu">
-        <a href="index.html">首页</a>
-        <a href="youth.html">青少年学习者</a>
-    </nav>
+        <nav class="site-nav">
+            <a href="index.html">首页</a>
+            <a href="youth.html">青少年学习者</a>
+        </nav>
 
-</header>
+    </header>
 
-<!-- 页面主体 -->
-<div class="talk-container">
+    <!-- Main -->
+    <main class="mingti-container">
 
-    <div class="page-title">
-        命题<span>说话</span>
-    </div>
+        <h1 class="page-title">
+            <span>命题</span>说话
+        </h1>
 
-    <!-- 第一页 -->
-    <div class="topic-page active-page" id="page1">
+        <!-- =========================
+             第1页
+        ========================= -->
+        <div class="topic-page active" id="page1">
 
-        <div class="topic-grid">
-
-            <div class="topic-card" onclick="location.href='topics/mingti_topic1.html'">
+            <div class="topic-card">
                 <h3>业余时间你喜欢做些什么</h3>
-                <div class="line"></div>
                 <p>
                     业余时间你喜欢做些什么？
-                    是读书、踢球、还是弹琴、画画等等，
+                    是读书、踢球，还是弹琴、画画等，
                     请谈谈你的业余爱好。
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic2.html'">
+            <div class="topic-card">
                 <h3>保护小动物</h3>
-                <div class="line"></div>
                 <p>
                     说说哪些小动物对人类有益，
                     请具体描述一下，
@@ -165,193 +239,195 @@ body{
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic3.html'">
+            <div class="topic-card">
                 <h3>我最喜欢的一种食物</h3>
-                <div class="line"></div>
                 <p>
                     同学们，你们爱吃什么美食？
-                    它看起来什么样？
+                    它看起来什么样，
                     吃起来什么味道？
+                    请说一说。
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic4.html'">
+            <div class="topic-card">
                 <h3>我最喜欢的一门课</h3>
-                <div class="line"></div>
                 <p>
                     在小学的学习过程中，
                     你最喜欢什么课程？
-                    为什么喜欢这门课？
+                    你为什么喜欢这门课呢？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic5.html'">
+            <div class="topic-card">
                 <h3>我的本领</h3>
-                <div class="line"></div>
                 <p>
-                    你身上一定有很多值得夸奖的方面，
-                    比如画画、唱歌、跳舞等。
+                    你身上一定有你最得意的地方吧？
+                    比如会画画、跳舞、唱歌、
+                    或者跑得快……
+                    请介绍一下。
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic6.html'">
+            <div class="topic-card">
                 <h3>千姿百态的云</h3>
-                <div class="line"></div>
                 <p>
-                    你观察过天上的云吗？
-                    它们像什么？
-                    你有什么有趣的想象？
+                    你观察过云吗？
+                    云是什么样子的？
+                    它像什么？
+                    请说一说你的观察。
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic7.html'">
+            <div class="topic-card">
                 <h3>我最喜欢的季节</h3>
-                <div class="line"></div>
                 <p>
-                    春夏秋冬，
+                    一年四季，
+                    春夏秋冬各不相同。
                     你最喜欢哪个季节？
                     为什么？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic8.html'">
+            <div class="topic-card">
                 <h3>成长的烦恼</h3>
-                <div class="line"></div>
                 <p>
-                    成长过程中，
-                    我们总会遇到一些烦恼，
-                    你会怎样面对？
+                    在成长过程中，
+                    你遇到过哪些烦恼？
+                    你是怎样面对和解决的？
                 </p>
             </div>
 
         </div>
 
-    </div>
+        <!-- =========================
+             第2页
+        ========================= -->
+        <div class="topic-page" id="page2">
 
-    <!-- 第二页 -->
-    <div class="topic-page" id="page2">
+            <div class="topic-card">
+                <h3>我最喜欢的运动</h3>
+                <p>
+                    你最喜欢什么运动？
+                    为什么喜欢？
+                    请介绍运动的过程和感受。
+                </p>
+            </div>
 
-        <div class="topic-grid">
+            <div class="topic-card">
+                <h3>一次难忘的旅行</h3>
+                <p>
+                    你去过哪些地方旅行？
+                    哪一次最难忘？
+                    请详细介绍。
+                </p>
+            </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic9.html'">
+            <div class="topic-card">
                 <h3>我的好朋友</h3>
-                <div class="line"></div>
                 <p>
                     请介绍一下你的好朋友，
-                    他有哪些优点？
+                    他（她）有什么特点？
+                    你们之间有哪些故事？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic10.html'">
-                <h3>我最喜欢的运动</h3>
-                <div class="line"></div>
+            <div class="topic-card">
+                <h3>我喜欢的动物</h3>
                 <p>
-                    你喜欢什么运动？
-                    它给你带来了哪些快乐？
+                    你喜欢什么动物？
+                    它长什么样？
+                    有什么生活习惯？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic11.html'">
-                <h3>难忘的一件事</h3>
-                <div class="line"></div>
+            <div class="topic-card">
+                <h3>我爱我的家乡</h3>
                 <p>
-                    在你的生活中，
-                    有没有一件特别难忘的事情？
+                    请介绍你的家乡，
+                    有哪些美景、美食或风俗？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic12.html'">
-                <h3>我的家乡</h3>
-                <div class="line"></div>
+            <div class="topic-card">
+                <h3>一次帮助别人的经历</h3>
                 <p>
-                    请介绍一下你的家乡，
-                    那里有哪些特色？
+                    你帮助过别人吗？
+                    当时发生了什么？
+                    你的心情怎样？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic13.html'">
-                <h3>我的梦想</h3>
-                <div class="line"></div>
+            <div class="topic-card">
+                <h3>我最喜欢的一本书</h3>
                 <p>
-                    长大后你想做什么？
+                    你读过哪些有趣的书？
+                    哪一本最喜欢？
                     为什么？
                 </p>
             </div>
 
-            <div class="topic-card" onclick="location.href='topics/mingti_topic14.html'">
-                <h3>一次快乐的旅行</h3>
-                <div class="line"></div>
+            <div class="topic-card">
+                <h3>未来的梦想</h3>
                 <p>
-                    请说说你的一次旅行经历，
-                    看到了什么？
-                </p>
-            </div>
-
-            <div class="topic-card" onclick="location.href='topics/mingti_topic15.html'">
-                <h3>我喜欢的小动物</h3>
-                <div class="line"></div>
-                <p>
-                    你喜欢什么小动物？
-                    它有什么特点？
-                </p>
-            </div>
-
-            <div class="topic-card" onclick="location.href='topics/mingti_topic16.html'">
-                <h3>我的学校</h3>
-                <div class="line"></div>
-                <p>
-                    请介绍一下你的学校，
-                    你最喜欢学校的什么地方？
+                    你长大后想做什么？
+                    为什么会有这样的梦想？
                 </p>
             </div>
 
         </div>
 
-    </div>
+        <!-- Pagination -->
+        <div class="pagination">
 
-    <!-- 分页 -->
-    <div class="pagination">
+            <button class="page-btn active" data-page="page1">
+                1
+            </button>
 
-        <button class="page-btn active"
-                onclick="showPage(1,this)">
-            1
-        </button>
+            <button class="page-btn" data-page="page2">
+                2
+            </button>
 
-        <button class="page-btn"
-                onclick="showPage(2,this)">
-            2
-        </button>
+        </div>
 
-    </div>
+    </main>
 
-</div>
+    <!-- Footer -->
+    <footer class="site-footer">
+        © 2026 中文学习平台
+    </footer>
 
-<!-- footer -->
-<footer class="site-footer">
-    © 2026 中文学习平台
-</footer>
+    <!-- JS -->
+    <script>
 
-<script>
+        const buttons = document.querySelectorAll('.page-btn');
+        const pages = document.querySelectorAll('.topic-page');
 
-function showPage(page,btn){
+        buttons.forEach(btn => {
 
-    document.querySelectorAll('.topic-page')
-        .forEach(p=>{
-            p.classList.remove('active-page');
+            btn.addEventListener('click', () => {
+
+                buttons.forEach(b => {
+                    b.classList.remove('active');
+                });
+
+                pages.forEach(p => {
+                    p.classList.remove('active');
+                });
+
+                btn.classList.add('active');
+
+                const pageId = btn.dataset.page;
+
+                document
+                    .getElementById(pageId)
+                    .classList
+                    .add('active');
+
+            });
+
         });
 
-    document.getElementById('page'+page)
-        .classList.add('active-page');
-
-    document.querySelectorAll('.page-btn')
-        .forEach(b=>{
-            b.classList.remove('active');
-        });
-
-    btn.classList.add('active');
-}
-
-</script>
+    </script>
 
 </body>
 </html>
