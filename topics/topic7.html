@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>我们去植树 - 看图说话</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+
+    <style>
+
+        body{   
+            background: #f5f2eb;
+        }
+
+        /* 页面主体 */
+        .topic-wrapper{
+
+            width: 90%;
+
+            max-width: 1400px;
+
+            margin: 40px auto 60px;
+        }
+
+        /* 卷轴 */
+        .scroll-board{
+
+            position: relative;
+
+            background: #f8f4ed;
+
+            border: 3px solid #d9b8aa;
+
+            padding: 40px;
+
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        /* 卷轴两侧 */
+        .scroll-board::before,
+        .scroll-board::after{
+
+            content: "";
+        
+            position: absolute;
+        
+            top: -20px;
+        
+            width: 36px;
+        
+            height: calc(100% + 40px);
+        
+            background: linear-gradient(
+                to right,
+                #d8cfc2 0%,
+                #f7f2ea 20%,
+                #fffaf3 50%,
+                #efe5d7 80%,
+                #cbbba7 100%
+            );
+        
+            border-radius: 18px;
+        
+            box-shadow:
+                inset 3px 0 5px rgba(255,255,255,0.8),
+                inset -3px 0 5px rgba(0,0,0,0.12),
+                0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .scroll-board::before{
+            left: -28px;
+        }
+
+        .scroll-board::after{
+            right: -28px;
+        }
+
+        /* 内部布局 */
+        .topic-content{
+
+            display: flex;
+
+            gap: 40px;
+
+            align-items: flex-start;
+        }
+
+        /* 左侧图片区 */
+        .topic-left{
+            width: 42%;
+        }
+
+        .topic-left img{
+
+            width: 100%;
+
+            border: 6px solid #f1f1f1;
+
+            display: block;
+        }
+
+        .topic-title{
+
+            margin-top: 18px;
+
+            font-size: 34px;
+
+            font-weight: bold;
+
+            color: #333;
+        }
+
+        /* 右侧 */
+        .topic-right{
+            flex: 1;
+        }
+
+        /* 顶部提示 */
+        .topic-header{
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 30px;
+
+            font-size: 20px;
+
+            color: #333;
+
+            line-height: 1.8;
+        }
+
+        .timer{
+
+            font-size: 22px;
+
+            font-weight: bold;
+
+            color: #666;
+
+            white-space: nowrap;
+        }
+
+        /* 横线区域 */
+        .writing-area{
+            margin-top: 20px;
+        }
+
+        .writing-line{
+
+            height: 48px;
+
+            border-bottom: 1px solid #d9a79b;
+        }
+
+        /* 手机端 */
+        @media screen and (max-width: 900px){
+
+            .topic-content{
+                flex-direction: column;
+            }
+
+            .topic-left{
+                width: 100%;
+            }
+
+            .topic-header{
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                gap: 12px;
+            }
+
+            .topic-title{
+                font-size: 28px;
+            }
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<!-- 顶部导航 -->
+<header>
+    <div class="logo">中文学习平台</div>
+    <nav>
+        <a href="../index.html">首页</a>
+        <a href="../youth.html">青少年学习者</a>
+    </nav>
+</header>
+
+<!-- 页面主体 -->
+<div class="topic-wrapper">
+
+    <div class="scroll-board">
+
+        <div class="topic-content">
+
+            <!-- 左侧 -->
+            <div class="topic-left">
+
+                <img src="../images/topics/7.jpg" alt="我们去植树">
+
+                <div class="topic-title">
+                    我们去植树
+                </div>
+
+            </div>
+
+            <!-- 右侧 -->
+            <div class="topic-right">
+
+                <div class="topic-header">
+
+                    <div>
+                        看左侧这幅图片，用自己的话描述图中的内容，必须说满30秒。
+                    </div>
+
+                    <div class="timer">
+                        ⏰ 01:00
+                    </div>
+
+                </div>
+
+                <div class="writing-area">
+
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+                    <div class="writing-line"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 页脚 -->
+<footer>
+    © 2026 中文学习平台
+</footer>
+
+</body>
+</html>
