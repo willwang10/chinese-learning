@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -15,292 +16,238 @@ body{
     background:#f5f2eb;
 }
 
-/* 标题 */
-
-.story-title{
-    text-align:center;
-    margin:30px 0;
-    font-size:42px;
-    font-weight:bold;
-    color:#8b5a2b;
+/* 与看图说话保持一致 */
+.topic-wrapper{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto 60px;
 }
 
-/* 卷轴 */
-
-.scroll-container{
-
-    max-width:1200px;
-    margin:20px auto 60px;
-
-    background:#f8f3ec;
-
-    border:1px solid #d8c6b6;
-
+.scroll-board{
     position:relative;
-
-    padding:50px 60px;
-
-    box-shadow:0 3px 12px rgba(0,0,0,0.15);
+    background:#f8f4ed;
+    border:3px solid #d9b8aa;
+    padding:40px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* 左右卷轴 */
+.scroll-board::before,
+.scroll-board::after{
 
-.scroll-container::before,
-.scroll-container::after{
-
-    content:'';
+    content:"";
 
     position:absolute;
 
-    top:-10px;
+    top:-20px;
 
-    width:22px;
-    height:calc(100% + 20px);
+    width:36px;
 
-    border-radius:12px;
+    height:calc(100% + 40px);
 
-    background:
-    linear-gradient(
-        90deg,
-        #111,
-        #666,
-        #111
+    background:linear-gradient(
+        to right,
+        #d8cfc2 0%,
+        #f7f2ea 20%,
+        #fffaf3 50%,
+        #efe5d7 80%,
+        #cbbba7 100%
     );
+
+    border-radius:18px;
+
+    box-shadow:
+        inset 3px 0 5px rgba(255,255,255,0.8),
+        inset -3px 0 5px rgba(0,0,0,0.12),
+        0 2px 8px rgba(0,0,0,0.15);
 }
 
-.scroll-container::before{
-    left:-12px;
+.scroll-board::before{
+    left:-28px;
 }
 
-.scroll-container::after{
-    right:-12px;
+.scroll-board::after{
+    right:-28px;
 }
 
-.story-content{
-
+.topic-content{
     display:flex;
     gap:40px;
+    align-items:flex-start;
 }
 
-/* 左边 */
-
-.story-left{
-    width:40%;
+/* 左侧图片区 */
+.topic-left{
+    width:42%;
 }
 
-.story-left img{
-
+.topic-left img{
     width:100%;
-
-    border:8px solid #f4efe7;
-
-    box-shadow:0 2px 8px rgba(0,0,0,0.15);
+    border:6px solid #f1f1f1;
+    display:block;
 }
 
-.story-name{
+.topic-title{
+    margin-top:18px;
+    font-size:34px;
+    font-weight:bold;
+    color:#333;
+}
 
-    margin-top:15px;
+/* 右侧 */
+.topic-right{
+    flex:1;
+}
 
-    font-size:28px;
+.topic-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
 
+.topic-header-text{
+    font-size:20px;
+    line-height:1.8;
     font-weight:bold;
 }
 
-/* 右边 */
-
-.story-right{
-    width:60%;
+.timer{
+    font-size:22px;
+    font-weight:bold;
+    color:#666;
+    white-space:nowrap;
 }
 
-.story-header{
+/* 故事内容区域 */
+.story-box{
 
-    display:flex;
+    height:520px;
 
-    justify-content:space-between;
+    overflow-y:auto;
 
-    align-items:center;
+    border:1px solid #e1c8bc;
 
-    margin-bottom:15px;
-}
+    background:#fcfaf7;
 
-.story-header h3{
+    padding:20px;
 
-    margin:0;
+    line-height:2.1;
 
-    font-size:32px;
+    font-size:18px;
 
     color:#333;
 }
 
-.timer{
+/* 模拟作文格线 */
+.story-box p{
 
-    color:#666;
+    margin:0;
 
-    font-size:36px;
+    padding:6px 0;
 
-    font-weight:bold;
+    border-bottom:1px solid #ecd2c8;
 }
 
-/* 文本框 */
+@media screen and (max-width:900px){
 
-.story-text{
+    .topic-content{
+        flex-direction:column;
+    }
 
-    height:560px;
+    .topic-left{
+        width:100%;
+    }
 
-    overflow-y:auto;
-
-    background:
-    repeating-linear-gradient(
-        transparent,
-        transparent 42px,
-        rgba(204,120,80,.4) 43px
-    );
-
-    line-height:43px;
-
-    font-size:28px;
-
-    color:#444;
-
-    padding:0 15px;
-
-    border:1px solid #e3d4c8;
-}
-
-/* 底部按钮 */
-
-.action-bar{
-
-    margin-top:25px;
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:25px;
-}
-
-.action-btn{
-
-    border:none;
-
-    padding:12px 30px;
-
-    border-radius:8px;
-
-    font-size:18px;
-
-    cursor:pointer;
-
-    color:white;
-}
-
-.play-btn{
-    background:#4caf50;
-}
-
-.record-btn{
-    background:#ff7043;
-}
-
-.review-btn{
-    background:#607d8b;
+    .topic-header{
+        flex-direction:column;
+        gap:10px;
+    }
 }
 
 </style>
+
 </head>
 
 <body>
 
-<header class="site-header">
-
-    <div class="logo">
-        中文学习平台
-    </div>
+<header>
+    <div class="logo">中文学习平台</div>
 
     <nav>
         <a href="../index.html">首页</a>
-        <a href="../teenagers.html">青少年学习者</a>
+        <a href="../youth.html">青少年学习者</a>
     </nav>
-
 </header>
 
+<div class="topic-wrapper">
 
-<h1 class="story-title">
-    故事复述
-</h1>
+    <div class="scroll-board">
 
+        <div class="topic-content">
 
-<div class="scroll-container">
+            <!-- 左侧图片 -->
+            <div class="topic-left">
 
-    <div class="story-content">
+                <img src="../images/topics/gushi_1.jpg" alt="破釜沉舟">
 
-        <!-- 左侧图片 -->
-
-        <div class="story-left">
-
-            <img src="../images/stories/pofuchenzhou.jpg">
-
-            <div class="story-name">
-                破釜沉舟
-            </div>
-
-        </div>
-
-        <!-- 右侧内容 -->
-
-        <div class="story-right">
-
-            <div class="story-header">
-
-                <h3>
-                    听完这个故事，并用自己的话复述出来，必须说满30秒。
-                </h3>
-
-                <div class="timer">
-                    ⏰ 01:00
+                <div class="topic-title">
+                    破釜沉舟
                 </div>
 
             </div>
 
-            <div class="story-text">
+            <!-- 右侧故事 -->
+            <div class="topic-right">
 
-                秦朝末年，天下大乱，各路起义军纷纷反抗暴秦。
+                <div class="topic-header">
 
-                当时，项羽率领楚军前去救援被秦军围困的赵国。
+                    <div class="topic-header-text">
+                        听完这个故事后，用自己的话复述出来，必须说满30秒。
+                    </div>
 
-                楚军渡过漳河后，项羽下令把做饭用的锅全部砸碎，
-                把渡河的船全部凿沉，只留下三天的粮食。
+                    <div class="timer">
+                        ⏰ 01:00
+                    </div>
 
-                士兵们十分惊讶，不明白为什么要这样做。
+                </div>
 
-                项羽告诉大家：
+                <div class="story-box">
 
-                “现在已经没有退路了，
-                要么打败敌人，
-                要么战死沙场。”
+                    <p>秦朝末年，天下大乱，各路起义军纷纷反抗暴秦。</p>
 
-                士兵们看到已经没有后路，
-                人人奋勇争先，
-                个个拼命作战。
+                    <p>项羽率领楚军前去救援被秦军围困的赵国。</p>
 
-                最终，
-                楚军以少胜多，
-                打败了强大的秦军。
+                    <p>楚军渡过漳河后，项羽下令把做饭用的锅全部砸碎。</p>
 
-                后来，人们用“破釜沉舟”
-                来形容下定决心，
-                不留退路，
-                拼尽全力去完成一件事情。
+                    <p>同时把渡河的船全部凿沉。</p>
+
+                    <p>每个士兵只留下三天的粮食。</p>
+
+                    <p>大家都十分惊讶，不知道为什么这样做。</p>
+
+                    <p>项羽告诉大家：</p>
+
+                    <p>“现在已经没有退路了，要么打败敌人，要么战死沙场。”</p>
+
+                    <p>士兵们看到已经没有后路，于是人人奋勇争先。</p>
+
+                    <p>最终楚军以少胜多，打败了强大的秦军。</p>
+
+                    <p>后来，人们用“破釜沉舟”来比喻下定决心。</p>
+
+                    <p>不留退路，全力以赴完成一件事情。</p>
+
+                </div>
 
             </div>
+
         </div>
 
     </div>
 
 </div>
 
-<footer class="site-footer">
+<footer>
     © 2026 中文学习平台
 </footer>
 
