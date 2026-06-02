@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>对牛弹琴 - 故事复述</title>
+
+<link rel="stylesheet" href="../css/style.css">
+
+<style>
+
+body{
+    background:#f5f2eb;
+}
+
+/* 与看图说话保持一致 */
+.topic-wrapper{
+    width:90%;
+    max-width:1400px;
+    margin:40px auto 60px;
+}
+
+.scroll-board{
+    position:relative;
+    background:#f8f4ed;
+    border:3px solid #d9b8aa;
+    padding:40px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.scroll-board::before,
+.scroll-board::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:-20px;
+
+    width:36px;
+
+    height:calc(100% + 40px);
+
+    background:linear-gradient(
+        to right,
+        #d8cfc2 0%,
+        #f7f2ea 20%,
+        #fffaf3 50%,
+        #efe5d7 80%,
+        #cbbba7 100%
+    );
+
+    border-radius:18px;
+
+    box-shadow:
+        inset 3px 0 5px rgba(255,255,255,0.8),
+        inset -3px 0 5px rgba(0,0,0,0.12),
+        0 2px 8px rgba(0,0,0,0.15);
+}
+
+.scroll-board::before{
+    left:-28px;
+}
+
+.scroll-board::after{
+    right:-28px;
+}
+
+.topic-content{
+    display:flex;
+    gap:40px;
+    align-items:flex-start;
+}
+
+/* 左侧图片区 */
+.topic-left{
+    width:42%;
+}
+
+.topic-left img{
+    width:100%;
+    border:6px solid #f1f1f1;
+    display:block;
+}
+
+.topic-title{
+    margin-top:18px;
+    font-size:34px;
+    font-weight:bold;
+    color:#333;
+}
+
+/* 右侧 */
+.topic-right{
+    flex:1;
+}
+
+.topic-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    margin-bottom:25px;
+}
+
+.topic-header-text{
+    font-size:20px;
+    line-height:1.8;
+    font-weight:bold;
+}
+
+.timer{
+    font-size:22px;
+    font-weight:bold;
+    color:#666;
+    white-space:nowrap;
+}
+
+/* 故事内容区域 */
+.story-box{
+
+    height:520px;
+
+    overflow-y:auto;
+
+    border:1px solid #e1c8bc;
+
+    background:#fcfaf7;
+
+    padding:20px;
+
+    line-height:2.1;
+
+    font-size:18px;
+
+    color:#333;
+}
+
+/* 模拟作文格线 */
+.story-box p{
+
+    margin:0;
+
+    padding:6px 0;
+
+    border-bottom:1px solid #ecd2c8;
+}
+
+@media screen and (max-width:900px){
+
+    .topic-content{
+        flex-direction:column;
+    }
+
+    .topic-left{
+        width:100%;
+    }
+
+    .topic-header{
+        flex-direction:column;
+        gap:10px;
+    }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+    <div class="logo">中文学习平台</div>
+
+    <nav>
+        <a href="../index.html">首页</a>
+        <a href="../youth.html">青少年学习者</a>
+    </nav>
+</header>
+
+<div class="topic-wrapper">
+
+    <div class="scroll-board">
+
+        <div class="topic-content">
+
+            <!-- 左侧图片 -->
+            <div class="topic-left">
+
+                <img src="../images/topics/gushi_8.jpg" alt="对牛弹琴">
+
+                <div class="topic-title">
+                    对牛弹琴
+                </div>
+
+            </div>
+
+            <!-- 右侧故事 -->
+            <div class="topic-right">
+
+                <div class="topic-header">
+
+                    <div class="topic-header-text">
+                        听完这个故事后，用自己的话复述出来，必须说满30秒。
+                    </div>
+
+                    <div class="timer">
+                        ⏰ 01:00
+                    </div>
+
+                </div>
+
+                <div class="story-box">
+
+                    <p>古时候，有一位著名的琴师叫公明仪。</p>
+
+                    <p>他弹琴的技术非常高超。</p>
+
+                    <p>有一天，他看到一头牛正在吃草。</p>
+
+                    <p>于是心血来潮，决定为牛弹奏乐曲。</p>
+
+                    <p>他弹出了十分优美动听的音乐。</p>
+
+                    <p>可是那头牛却毫无反应。</p>
+
+                    <p>它仍然低着头吃草。</p>
+
+                    <p>好像根本没有听见一样。</p>
+
+                    <p>公明仪感到十分奇怪。</p>
+
+                    <p>后来他才明白，不是音乐不好听。</p>
+
+                    <p>而是牛根本听不懂这些高雅的乐曲。</p>
+
+                    <p>后来，人们用“对牛弹琴”来比喻对不懂道理的人讲深奥的道理。</p>
+
+                    <p>或者说话不看对象，白费力气。</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2026 中文学习平台
+</footer>
+
+</body>
+</html>
